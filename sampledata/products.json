@@ -1,0 +1,16 @@
+[
+    {
+        "id": "NTX1000",
+        "supplier": "1",
+        "name": "Cola Cao",
+        "stockLevel": 5,
+        "onOrder": 10
+    },
+    {
+        "id": "NTX2000",
+        "supplier": "1",
+        "name": "Cola Cao Grande",
+        "stockLevel": 50,
+        "onOrder": 20
+    }
+]

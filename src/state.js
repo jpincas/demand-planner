@@ -1,7 +1,7 @@
 const state = {
   products: [],
-  suppliers: []
-  
-}
+  suppliers: [],
+  sales: {}
+};
 
-export default state
+export default state;

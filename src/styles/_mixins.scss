@@ -1,0 +1,9 @@
+@import "variables";
+
+@mixin topSeparatorStandard() {
+  border-top: 1px solid $separatorInvertedColor;
+}
+
+@mixin bottomSeparatorStandard() {
+  border-bottom: 1px solid $separatorInvertedColor;
+}

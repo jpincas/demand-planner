@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@hyperapp/router": "^0.3.0",
+    "chart.js": "^2.7.1",
     "hyperapp": "0.12.1"
   }
 }

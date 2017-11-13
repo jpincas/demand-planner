@@ -1,37 +1,48 @@
-@import 'variables';
+@import "variables";
+@import "mixins";
+@import "./components/supplierlist";
 
 /* Simple reset. */
-body,
-* {
+body {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Roboto', sans-serif;  
+  font-family: "Roboto", sans-serif;
+  font-size: $fontSizeBase;
+  color: $textColorBase;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:visited {
+    color: inherit;
+  }
 }
 
 #view-container {
   width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  background-color: gold;
+  flex-direction: row;
+  background-color: white;
   min-width: 1024px;
 }
 
-#topbar-container {
-  height: 40px;
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-}
-
-#main-container {
-  background-color: blue;
-  display: flex;
-  min-height: 100vh;
+#configsidebar-container {
+  background-color: $color-primary-4;
+  flex-basis: 100px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 #leftsidebar-container {
-  background-color: green;
-  flex-grow: 1;
+  background-color: $color-primary-3;
+  color: $textColorInvertedMuted;
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: $spacingTight;
 }
 
 #content-container {
@@ -39,18 +50,18 @@ body,
   display: flex;
   flex-direction: column;
   #topcontent-container {
-    background-color: orange;
+    background-color: $color-ghost-3;
     height: 50vh;
   }
-  #topcontent-container {
-    background-color: ghostwhite;
+  #bottomcontent-container {
+    background-color: $color-ghost-1;
     height: 50vh;
   }
 }
 
 #rightsidebar-container {
-  background-color: turquoise;
-  flex-grow: 1;
+  background-color: $color-secondary-2-1;
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
-
-

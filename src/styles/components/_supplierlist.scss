@@ -1,0 +1,8 @@
+ul.supplierlist-list {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: $spacingTight;
+    @include bottomSeparatorStandard();
+  }
+}

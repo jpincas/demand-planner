@@ -1,31 +1,33 @@
-import { h } from 'hyperapp'
+import { h } from "hyperapp";
+import { router, Link } from "@hyperapp/router";
 
 // Actions
 
 const actions = {
+  getSuppliers: (state, { supplierList }) =>
+    fetch("/suppliers.json")
+      .then(data => data.json())
+      .then(ps => supplierList.setSuppliers(ps)),
 
-    getSuppliers: ( state, { supplierList } ) => (
-        fetch('/suppliers.json')
-        .then((data) => data.json())
-        .then((ps) => 
-            supplierList.setSuppliers(ps)
-        )
-    ),
-
-    setSuppliers: function(state, actions, ps){
-        return { suppliers: ps }
-    }
-}
+  setSuppliers: function(state, actions, ps) {
+    return { suppliers: ps };
+  }
+};
 
 // Render
 
-const SupplierList = ({ suppliers, getSuppliers }) => (
-    <div class="supplierlist-container">
-    <h1>Suppliers</h1>
-        <ul>
-        { suppliers.map(({name, id}) => <li>{ name }, { id }</li>) }
-        </ul>
-    </div>
-)
+const SupplierList = ({ suppliers, actions }) => (
+  <div class="supplierlist-container">
+    <ul class="supplierlist-list">
+      {suppliers.map(({ name, id }) => (
+        <li class="supplierlist-list-item">
+          <Link to={"/suppliers/" + id} go={actions.router.go}>
+            {name}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
-export { SupplierList, actions }
+export { SupplierList, actions };
